@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">BookStoreMVVM</string>
+    <string name="best_seller">En Çok Satan</string>
+    <string name="all_books">Tüm Kitaplar</string>
+</resources>
