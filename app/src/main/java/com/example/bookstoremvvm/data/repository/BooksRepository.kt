@@ -19,7 +19,7 @@ class BooksRepository(private val bookService: BookService) {
 
     fun getBooks() {
         loadingLiveData.value = true
-        bookService.getProducts().enqueue(object : Callback<GetBooksResponse> {
+        bookService.getBooks().enqueue(object : Callback<GetBooksResponse> {
             override fun onResponse(call: Call<GetBooksResponse>, response: Response<GetBooksResponse>) {
                 val result = response.body()?.books
 
@@ -35,7 +35,7 @@ class BooksRepository(private val bookService: BookService) {
             override fun onFailure(call: Call<GetBooksResponse>, t: Throwable) {
                 errorMessageLiveData.value = t.message.orEmpty()
                 loadingLiveData.value = false
-                Log.e("GetProducts", t.message.orEmpty())
+                Log.e("GetBooks", t.message.orEmpty())
             }
         })
     }

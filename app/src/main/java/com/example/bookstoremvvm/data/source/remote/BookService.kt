@@ -10,7 +10,7 @@ import retrofit2.http.Query
 
 interface BookService {
     @GET(GET_BOOKS)
-    fun getProducts(): Call<GetBooksResponse>
+    fun getBooks(): Call<GetBooksResponse>
 
     @GET(GET_BOOK_DETAIL)
     fun getBookDetail(

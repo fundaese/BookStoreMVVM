@@ -11,7 +11,7 @@ import com.example.bookstoremvvm.databinding.ItemBookBinding
 
 class BooksAdapter (
     private val bookListener: BookListener
-) : ListAdapter<Book, BooksAdapter.BookViewHolder>(ProductDiffCallBack()) {
+) : ListAdapter<Book, BooksAdapter.BookViewHolder>(BookDiffCallBack()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BookViewHolder =
         BookViewHolder(
@@ -39,7 +39,7 @@ class BooksAdapter (
         }
     }
 
-    class ProductDiffCallBack : DiffUtil.ItemCallback<Book>() {
+    class BookDiffCallBack : DiffUtil.ItemCallback<Book>() {
         override fun areItemsTheSame(oldItem: Book, newItem: Book): Boolean {
             return oldItem.id == newItem.id
         }
